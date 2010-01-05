@@ -59,6 +59,7 @@ function tm() {
   mate $1
 }
 
+
 # To use: add a .lighthouse file into your directory with the URL to the
 # individual project. For example:
 # https://rails.lighthouseapp.com/projects/8994

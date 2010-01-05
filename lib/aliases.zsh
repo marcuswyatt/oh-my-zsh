@@ -1,18 +1,49 @@
 #!/bin/zsh
 
+#########
+# Shell #
+#########
+alias reload='source ~/.zshrc'
+
+#############
+# SHORTCUTS #
+#############
+alias cdf='eval `osascript /Applications/Utilities/OpenTerminal.app/Contents/Resources/Scripts/OpenTerminal.scpt `'
+alias cdw='cd /Volumes/Data/Marcus/Workspace/'
+alias cds='cd /Volumes/Data/Marcus/Source/'
+alias cdr='cd /Volumes/Data/Marcus/Repos/'
+alias cdv='cd /Volumes/Data/Marcus/Work'
+
+#######
+# GEM #
+#######
+alias gem='env ARCHFLAGS="-arch x86_64" gem'
+alias sgem='sudo gem'
+
 # Push and pop directories on directory stack
 alias pu='pushd'
 alias po='popd'
 
-alias ss='thin --stats "/thin/stats" start'
+#########
+# RAILS #
+#########
+alias mr='mongrel_rails start'
+alias ms='mongrel_rails stop'
+alias rp='touch tmp/restart.txt'
+alias tl='tail -f log/*.log'
+alias ts='thin start'
+alias sc='ruby script/console --irb="irb --simple-prompt -r irb/completion -rubygems"'
+alias sd='ruby script/dbconsole'
 alias sg='ruby script/generate'
-alias sd='ruby script/destroy'
 alias sp='ruby script/plugin'
+alias ss='./script/server'
+if [ -f ./script/server_restart ]; then
+  alias ss='./script/server_restart'
+fi
+alias ssd='ruby script/server --debugger'
 alias ssp='ruby script/spec'
 alias rdbm='rake db:migrate'
-alias sc='ruby script/console'
-alias sd='ruby script/server --debugger'
-alias devlog='tail -f log/development.log'
+# alias ss='thin --stats "/thin/stats" start'
 
 # Basic directory operations
 alias .='pwd'
@@ -21,27 +52,22 @@ alias -- -='cd -'
 
 # Super user
 alias _='sudo'
-alias ss='sudo su -'
+alias su='sudo su -'
 
 #alias g='grep -in'
 
 # Show history
 alias history='fc -l 1'
 
-# List direcory contents
+# List directory contents
 alias lsa='ls -lah'
 alias l='ls -la'
 alias ll='ls -alr'
 alias sl=ls # often screw this up
 
-alias sgem='sudo gem'
-
 # Find ruby file
 alias rfind='find . -name *.rb | xargs grep -n'
 alias afind='ack-grep -il'
-
-# Git and svn mix
-alias git-svn-dcommit-push='git svn dcommit && git push github master:svntrunk'
 
 # TextMate
 alias et='mate . &'
@@ -51,3 +77,18 @@ alias etts='mate app config lib db public script spec test vendor/plugins vendor
 
 # Editor Ruby file in TextMate
 alias mr='mate CHANGELOG app config db lib public script spec test'
+
+# -a, --archive               archive mode
+# -v, --verbose               increase verbosity
+# -z, --compress              compress file data during the transfer
+# -r, --recursive             This tells rsync to copy directories recursively. 
+# -u, --update                skip files that are newer on the receiver
+alias rsync='rsync -aruvz --exclude '.svn' --progress '
+
+# Use OS X version of SSH with agent forwarding
+alias ssh='/usr/bin/ssh -A'
+alias scp='/usr/bin/scp'
+alias sftp='/usr/bin/sftp'
+
+# -N  Causes  a  line  number to be displayed at the beginning of each line in the display.
+alias less='less -N'

@@ -8,11 +8,6 @@ unsetopt flowcontrol
 
 WORDCHARS=''
 
-autoload -U compinit
-compinit
-
-zmodload -i zsh/complist
-
 ## case-insensitive (all),partial-word and then substring completion
 if [ "x$CASE_SENSITIVE" = "xtrue" ]; then
   zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -23,14 +18,14 @@ fi
 
 zstyle ':completion:*' list-colors ''
 
-
 unsetopt MENU_COMPLETE
 #setopt AUTO_MENU
 
 # should this be in keybindings?
-bindkey -M menuselect '^o' accept-and-infer-next-history
+# bindkey -M menuselect '^o' accept-and-infer-next-history
 
 zstyle ':completion:*:*:*:*:*' menu yes select
+# zstyle ':completion:*' menu select=1
 # zstyle ':completion:*:*:*:*:processes' force-list always
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
@@ -47,3 +42,16 @@ fi
 #zstyle ':completion:*:history-words' remove-all-dups yes
 #zstyle ':completion:*:history-words' list false
 #zstyle ':completion:*:history-words' menu yes
+
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/Users/Marcus/.zshrc'
+
+autoload -Uz compinit
+compinit
+
+zmodload -i zsh/complist
