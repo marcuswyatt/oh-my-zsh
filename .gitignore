@@ -5,3 +5,4 @@ custom/*.zsh
 !custom/example.zsh
 !custom/misc.zsh
 !custom/scm.zsh
+oh-my-zsh.tmproj
