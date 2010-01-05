@@ -3,3 +3,5 @@ log/.zsh_history
 projects.zsh
 custom/*.zsh
 !custom/example.zsh
+!custom/misc.zsh
+!custom/scm.zsh
