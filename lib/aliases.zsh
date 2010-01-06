@@ -30,7 +30,7 @@ alias po='popd'
 alias mr='mongrel_rails start'
 alias ms='mongrel_rails stop'
 alias rp='touch tmp/restart.txt'
-alias tl='tail -f log/*.log /private/var/log/apache2/*'
+alias tl='tail -f /private/var/log/apache2/* log/*.log'
 alias ts='thin start'
 alias sc='ruby script/console --irb="irb --simple-prompt -r irb/completion -rubygems"'
 alias sd='ruby script/dbconsole'
@@ -44,6 +44,8 @@ alias ssd='ruby script/server --debugger'
 alias ssp='ruby script/spec'
 alias rdbm='rake db:migrate'
 # alias ss='thin --stats "/thin/stats" start'
+
+alias jeweler='jeweler --rspec --cucumber --gemcutter --yard'
 
 # Basic directory operations
 alias .='pwd'
