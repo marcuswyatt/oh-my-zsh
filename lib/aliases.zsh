@@ -17,8 +17,8 @@ alias cdv='cd /Volumes/Data/Marcus/Work'
 #######
 # GEM #
 #######
-alias gem='env ARCHFLAGS="-arch x86_64" gem'
-alias sgem='sudo gem'
+# alias gem='env ARCHFLAGS="-arch x86_64" gem'
+# alias sgem='sudo gem'
 
 # Push and pop directories on directory stack
 alias pu='pushd'
@@ -37,15 +37,11 @@ alias sd='ruby script/dbconsole'
 alias sg='ruby script/generate'
 alias sp='ruby script/plugin'
 alias ss='ruby script/server'
-if [ -f ./script/server_restart ]; then
-  alias ss='ruby script/server_restart'
-fi
+alias ssr='ruby script/server_restart'
 alias ssd='ruby script/server --debugger'
 alias ssp='ruby script/spec'
 alias rdbm='rake db:migrate'
 # alias ss='thin --stats "/thin/stats" start'
-
-alias jeweler='jeweler --rspec --cucumber --gemcutter --yard'
 
 # Basic directory operations
 alias .='pwd'
@@ -83,7 +79,7 @@ alias mr='mate CHANGELOG app config db lib public script spec test'
 # -a, --archive               archive mode
 # -v, --verbose               increase verbosity
 # -z, --compress              compress file data during the transfer
-# -r, --recursive             This tells rsync to copy directories recursively. 
+# -r, --recursive             This tells rsync to copy directories recursively.
 # -u, --update                skip files that are newer on the receiver
 alias rsync='rsync -aruvz --exclude '.svn' --progress '
 
@@ -94,3 +90,6 @@ alias sftp='/usr/bin/sftp'
 
 # -N  Causes  a  line  number to be displayed at the beginning of each line in the display.
 alias less='less -N'
+
+# ruby version manager
+# alias rvm='rvm $1 --symlink textmate --passenger'
