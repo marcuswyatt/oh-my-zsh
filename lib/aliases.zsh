@@ -92,4 +92,9 @@ alias sftp='/usr/bin/sftp'
 alias less='less -N'
 
 # ruby version manager
-# alias rvm='rvm $1 --symlink textmate --passenger'
+# if [[ $1 == 'system' ]]; then
+#   rm -f .rvm/bin/textmate_ruby
+#   alias rvm='rvm $1'
+# else
+#   alias rvm='rvm $1 --symlink textmate'
+# fi
