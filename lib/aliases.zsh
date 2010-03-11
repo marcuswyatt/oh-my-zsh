@@ -24,13 +24,13 @@ alias cdv='cd /Volumes/Data/Marcus/Work'
 alias pu='pushd'
 alias po='popd'
 
-#########
-# RAILS #
-#########
+###############
+# RAILS 2.x.x #
+###############
 alias mr='mongrel_rails start'
 alias ms='mongrel_rails stop'
 alias rp='touch tmp/restart.txt'
-alias tl='tail -f /private/var/log/apache2/* log/*.log'
+alias tl='tail -f tail -f log/development.log /var/log/apache2/*_log'
 alias ts='thin start'
 alias sc='ruby script/console --irb="irb --simple-prompt -r irb/completion -rubygems"'
 alias sd='ruby script/dbconsole'
@@ -41,12 +41,20 @@ alias ssr='ruby script/server_restart'
 alias ssd='ruby script/server --debugger'
 alias ssp='ruby script/spec'
 alias rdbm='rake db:migrate'
+
 # alias ss='thin --stats "/thin/stats" start'
+
+###########
+# RAILS 3 #
+###########
+alias r='rails'
+
 
 # Basic directory operations
 alias .='pwd'
 alias ...='cd ../..'
 alias -- -='cd -'
+alias up='cd "`env | grep OLDPWD | cut -f 2 -d =`" '
 
 # Super user
 alias _='sudo'
@@ -90,6 +98,9 @@ alias sftp='/usr/bin/sftp'
 
 # -N  Causes  a  line  number to be displayed at the beginning of each line in the display.
 alias less='less -N'
+
+
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 
 # ruby version manager
 # if [[ $1 == 'system' ]]; then

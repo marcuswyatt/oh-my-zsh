@@ -9,8 +9,3 @@ function night_or_day() {
 function battery () {
   ioreg -l | grep -i capacity | tr '\n' ' | ' | awk '{printf("%.2f%%\n", $10/$5 * 100)}'
 }
-
-function rvmd() {
-  rvm use $1
-  export TM_RUBY=`which ruby`
-}
